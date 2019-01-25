@@ -18,16 +18,20 @@ document.getElementById('calendar').innerHTML = '<h1>'+monthNames[month]+'</h1>'
 
 document.getElementById('calendar').innerHTML += '<ul class="weekdays"><li>Mo</li><li>Tu</li><li>We</li><li>Th</li><li>Fr</li><li>Sa</li><li>Su</li></ul>';
 
+var sunday = 6-dayStart+1;
 
 var dateLi = "";
 dateLi += '<ul class="days">';
 for(var i=0; i<dayStart;i++){ 
-	dateLi+= '<li> </li>';
+	dateLi+= '<li class="inactive"> </li>';
 }
 
 for(var i=0; i<totalDaysInMonth; i++){
-	if((i+1)==today) dateLi+="<li><span class='active'>"+(i+1)+"</span></li>";
-	else dateLi+="<li>"+(i+1)+"</li>";
+	if((i+1)==today || (i+1)==today+1) dateLi+="<li class='active'>"+(i+1)+"</li>";
+	else if((i+1)-sunday==0){ 
+		dateLi+="<li class='holiday'>"+(i+1)+"</li>";
+		sunday+=7;
+	} else dateLi+="<li class='inactive'>"+(i+1)+"</li>";
 }
 
 document.getElementById('calendar').innerHTML += dateLi + '</ul>';
