@@ -4,8 +4,7 @@ var today = date.getDate();
 var totalDaysInMonth = daysInMonth(month + 1, date.getFullYear());
 var monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 var monthNum = ["01", "02", "03", "04", "05", "06","07", "08", "09", "10", "11", "12"];
-var dayStart = new Date("01/"+monthNum[month]+"/"+date.getFullYear());
-
+var dayStart = new Date(monthNum[month]+"/01/"+date.getFullYear());
 dayStart = dayStart.getDay();
 if(dayStart==0) dayStart=6;
 else dayStart-=1;
