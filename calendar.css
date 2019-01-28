@@ -10,7 +10,7 @@ body{
 
 .weekdays {
   margin: 0;
-  padding: 10px 0;
+  padding: 10px 0px 10px 15px;
   background-color: #ddd;
 }
 
@@ -22,7 +22,7 @@ body{
 }
 
 .days {
-  padding: 10px 0;
+  padding: 10px 0px 10px 15px;
   background: #eee;
   margin: 0;
 }
