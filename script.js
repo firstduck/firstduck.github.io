@@ -11,12 +11,16 @@ function daysInMonth(month,year) {
 }
 
 var countData = document.getElementsByClassName("calendarValue").length;
+var i = 1;
 
-for (var i=1;i<countData+1;i++){
-	var text = document.getElementById("calendar_value["+i+"]").value;
+createCalendar (i);
+
+function createCalendar (index) {
+	if(index<1) index = 1;
+	else if(index>countData) index = countData;
+	var text = document.getElementById("calendar_value["+index+"]").value;
 	var json = JSON.parse(text);
 
-	console.log(json);
 	var monthNum =  json.monthYear.substring(0,2);
 	var month = parseInt(monthNum);
 
@@ -31,11 +35,9 @@ for (var i=1;i<countData+1;i++){
 
 	// document.getElementById('calendar['+i+']').innerHTML = '<h1>'+monthNames[month-1]+' '+year+'</h1>';
 
-	var div = '<div class="month"><ul><li class="prev">&#10094;</li><li class="next">&#10095;</li><li>'+monthNames[month-1]+'<br><span style="font-size:18px">'+year+'</span></li></ul></div>';
+	document.getElementById('calendar').innerHTML = '<div class="month"><ul><li class="prev"><button onclick=createCalendar('+(index-1)+')>&#10094;</li><li class="next"><button onclick=createCalendar('+(index+1)+')>&#10095;</li><li>'+monthNames[month-1]+'<br><span style="font-size:18px">'+year+'</span></li></ul></div>';
 
-	document.getElementById('calendar['+i+']').innerHTML = div;
-
-	document.getElementById('calendar['+i+']').innerHTML += '<ul class="weekdays"><li>Mo</li><li>Tu</li><li>We</li><li>Th</li><li>Fr</li><li>Sa</li><li>Su</li></ul>';
+	document.getElementById('calendar').innerHTML += '<ul class="weekdays"><li>Mo</li><li>Tu</li><li>We</li><li>Th</li><li>Fr</li><li>Sa</li><li>Su</li></ul>';
 
 	var sunday = 6-dayStart+1;
 
@@ -68,5 +70,5 @@ for (var i=1;i<countData+1;i++){
 		else dateLi+="<li class='inactive'>"+j+"</li>";
 	}
 
-	document.getElementById('calendar['+i+']').innerHTML += dateLi + '</ul>';
+	document.getElementById('calendar').innerHTML += dateLi + '</ul>';
 }
