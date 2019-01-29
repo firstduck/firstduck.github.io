@@ -4,8 +4,8 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-#wrap_calendar {
-  width: 300px;
+#wrap_calendar{
+  width: 900px;
 }
 
 .weekdays {
@@ -18,6 +18,7 @@ body{
   display: inline-block;
   width: 13.6%;
   color: #666;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -25,6 +26,7 @@ body{
   padding: 10px 0px 10px 15px;
   background: #eee;
   margin: 0;
+  height: 150px;
 }
 
 .days li[class="inactive"] {
@@ -33,7 +35,7 @@ body{
   width: 13.6%;
   text-align: center;
   margin-bottom: 5px;
-  font-size:15px;
+  font-size:12px;
   color: #777;
 }
 
@@ -44,7 +46,7 @@ body{
   text-align: center;
   border-radius: 50%;
   margin-bottom: 5px;
-  font-size:15px;
+  font-size:12px;
   color: #777;
   background-color: #1abc9c;
 }
@@ -55,26 +57,25 @@ body{
   width: 13.6%;
   text-align: center;
   margin-bottom: 5px;
-  font-size:15px;
+  font-size:12px;
   color: #777;
   background-color: #1abc9c;
 }
 
-.days li[class="sunday"] {
+.days li[class="isoff"] {
   list-style-type: none;
   display: inline-block;
   width: 13.6%;
   text-align: center;
   margin-bottom: 5px;
-  font-size:15px;
-  color: #777;
-  background-color: #ef9a9a;
+  font-size:12px;
+  font-weight: bold;
+  color: red;
 }
 
-
-
 .month {
-  padding: 30px 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   width: 100%;
   background: #e57373;
   text-align: center;
@@ -87,19 +88,17 @@ body{
 
 .month ul li {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
 
-.month .next {
-  float: right;
-  padding-top: 10px;
+.calendar {
+  width: 200px;
+  height: 250px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+  overflow: hidden;
 }
-ul {list-style-type: none;}
-* {box-sizing: border-box;}
