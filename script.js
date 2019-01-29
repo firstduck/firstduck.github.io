@@ -71,7 +71,6 @@ for (var i=1;i<diffMonth+1;i++, counterMonthInt++){
 			isoff = "0";
 		}
 
-		console.log(monthNow +" "+counterMonth);
 		if(j-sunday==0 && j==dateNow && monthNow == counterMonth && parseInt(yearNow) == year){
 			dateLi+="<li class='"+ json.detail[counter].style +"' style='font-weight: bold; color: red'>"+j+"</li>";
 			sunday+=7;
